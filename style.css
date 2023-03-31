@@ -1,5 +1,7 @@
 body{
-  background-color:hsla(184, 93%, 46%, 0.445)
+  background-color:hsla(184, 93%, 46%, 0.445);
+  direction: rtl;
+  
 }
 
 .title{
