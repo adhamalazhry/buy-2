@@ -10,12 +10,25 @@
 <body>
     <div id="smart-button-container">
         <h1 style="text-align: center ;">دفع رسوم الاشتراك الشهري بأكاديمية الإتقان</h1>
-        <div style="text-align: center"><label for="description">اسم الطالب أو الطلاب </label><br/><input type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
-          <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
-        <div style="text-align: center"><label for="amount">رسوم الاشتراك الشهري بالدولار </label><br/><input name="amountInput" type="number" id="amount" value="" ><span> USD</span></div>
+        <div style="text-align: center"><label for="description">اسم الطالب أو الطلاب </label>
+          <br/>
+          <input class="input1" type="text" name="descriptionInput" id="description" maxlength="127" value=""></div>
+         
+         <div class="note">
+            <p> تنبيه !</p>
+            <h4>   نكتب قيمة الاشتراك بالدولار  
+              <span>(يعني لو  المبلغ المراد دفعه 100 ريال هشوف  ال 100 ريال تساوي كم دولار )</span>
+                ولايشترط وجود دولارت في البطاقة  </h4>
+          </div> <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
+        <div style="text-align: center"><label for="amount"> اكتب المبلغ المراد دفعه </label><br/>
+          <input name="amountInput" type="number" id="amount" value="" ><span> USD</span></div>
           <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
+          
+         
         <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
           <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>
+          <h5 style="text-align: center">  الخبار الثاني Debit or creatit card للدفع بالبطاقة نضغط على </h5>
+          
         <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
       </div>
       <script src="https://www.paypal.com/sdk/js?client-id=Ae0Pl6X_H-9pfOqgWtxX-4pDggxGOmZVs1TvXCY4Qi1u4Z4uvBJ2w7p09IKWMywXIGxj8T2Z5w8reshg&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>

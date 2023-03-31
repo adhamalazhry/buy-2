@@ -1,0 +1,29 @@
+label{
+    font-size: 25px;
+   
+}
+input{
+     width: 20%;
+  box-sizing: border-box;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+
+}
+.note p{
+    color:red;
+}
+
+
+
+input[type=number]::-webkit-outer-spin-button,
+input[type=number]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.note{
+    text-align: center;
+}
+.input1{
+  margin-right: 30px;
+}
