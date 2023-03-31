@@ -10,8 +10,20 @@ input{
   border-radius: 4px;
 
 }
+.note h4{
+     border: solid red 2px;
+     margin-right: 15%;
+     margin-left: 15%;
+    padding: 10px;
+    border-radius: 10px;
+}
 .note p{
-    color:red;
+    background-color: yellow;
+  color: red;
+  font-size: 18px;
+  font-weight: bold;
+
+   
 }
 
 
@@ -26,4 +38,7 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .input1{
   margin-right: 30px;
+}
+.error{
+    display: none;
 }

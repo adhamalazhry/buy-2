@@ -19,14 +19,14 @@
             <h4>   نكتب قيمة الاشتراك بالدولار  
               <span>(يعني لو  المبلغ المراد دفعه 100 ريال هشوف  ال 100 ريال تساوي كم دولار )</span>
                 ولايشترط وجود دولارت في البطاقة  </h4>
-          </div> <p id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
+          </div> <p class="error" id="descriptionError" style="visibility: hidden; color:red; text-align: center;">Please enter a description</p>
         <div style="text-align: center"><label for="amount"> اكتب المبلغ المراد دفعه </label><br/>
-          <input name="amountInput" type="number" id="amount" value="" ><span> USD</span></div>
+          <input name="amountInput" type="number" id="amount" value="" placeholder="أدخل القيمة بالدولار $" ><span> USD</span></div>
           <p id="priceLabelError" style="visibility: hidden; color:red; text-align: center;">Please enter a price</p>
           
          
         <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
-          <p id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>
+          <p class="error" id="invoiceidError" style="visibility: hidden; color:red; text-align: center;">Please enter an Invoice ID</p>
           <h5 style="text-align: center">  الخبار الثاني Debit or creatit card للدفع بالبطاقة نضغط على </h5>
           
         <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
