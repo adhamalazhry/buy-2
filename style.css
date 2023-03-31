@@ -1,3 +1,17 @@
+body{
+  background-color:hsla(184, 93%, 46%, 0.445)
+}
+
+.title{
+   color: blue;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+  text-transform: uppercase;
+  font-family: 'Lateef', sans-serif;
+}
+
+
 label{
     font-size: 25px;
    
@@ -16,7 +30,9 @@ input{
      margin-left: 15%;
     padding: 10px;
     border-radius: 10px;
+    font-family: 'Lateef', sans-serif;
 }
+
 .note p{
     background-color: yellow;
   color: red;
@@ -38,7 +54,4 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .input1{
   margin-right: 30px;
-}
-.error{
-    display: none;
 }
