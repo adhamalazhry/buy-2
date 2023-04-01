@@ -75,10 +75,9 @@ input{
 .note span {
   color: #333;
   font-size: 16px;
+  color: #1440cff3;
 }
-.studentName{
-  margin: 3px;
-}
+
 
 input[type=number]::-webkit-outer-spin-button,
 input[type=number]::-webkit-inner-spin-button {
