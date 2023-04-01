@@ -47,7 +47,7 @@ input{
 .note p {
   margin: 0px;
   background-color: yellow;
-  color: red;
+  color: rgba(34, 109, 0, 0.788);
   font-size: 18px;
   font-weight: bold;
   border-top-right-radius:14px ;
