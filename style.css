@@ -93,12 +93,13 @@ input[type=number]::-webkit-inner-spin-button {
 }
 .masg h1{
   background-color: rgba(250, 235, 215, 0.781);
-  max-width: 30%;
-  border-radius: 3px;
+  max-width: auto;
+  border-radius: 9px;
+  text-align: center;
 }
 
 .masg span{
-  display: block;
+ display: block;
   font-size: 15px;
 
 }
