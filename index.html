@@ -129,8 +129,8 @@
     
               // Show a success message within this page, e.g.
               const element = document.getElementById('paypal-button-container');
-              element.innerHTML = '<h1> </h1>';
-              element.innerHTML = '<h3>      تم الدفع بنجاح (شكرا لكم 🌹)   </h3>';
+             
+              element.innerHTML = `<h1>     تم دفع  ${amount.target.value}بنجاح (شكرا لكم 🌹)   </h1>`;
     
               // Or go to another URL:  actions.redirect('thank_you.html');
               
