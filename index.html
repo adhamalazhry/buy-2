@@ -33,7 +33,7 @@
           <p class="error" id="invoiceidError" style=" display: none; color:red; text-align: center;">Please enter an Invoice ID</p>
           <h5 style="text-align: center">    للدفع بالبطاقة نضغط على Debit or creatit card</h5>
           
-        <div style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
+        <div class="masg" style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
       </div>
       <script src="https://www.paypal.com/sdk/js?client-id=Ae0Pl6X_H-9pfOqgWtxX-4pDggxGOmZVs1TvXCY4Qi1u4Z4uvBJ2w7p09IKWMywXIGxj8T2Z5w8reshg&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
       <script>
@@ -130,7 +130,7 @@
               // Show a success message within this page, e.g.
               const element = document.getElementById('paypal-button-container');
              
-              element.innerHTML = `<h1 >     تم دفع ${amount.value}  بنجاح (شكرا لكم 🌹)   </h1>`;
+              element.innerHTML = `<h1 >     تم دفع [$${amount.value}] بنجاح  <span>  شكرًا لكم🌹</span>   </h1>`;
     
               // Or go to another URL:  actions.redirect('thank_you.html');
               
