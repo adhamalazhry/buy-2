@@ -91,7 +91,14 @@ input[type=number]::-webkit-inner-spin-button {
   margin-left: 30px;
   margin-bottom: 10px;
 }
+.masg h1{
+  background-color: rgba(250, 235, 215, 0.781);
+  max-width: 30%;
+  border-radius: 3px;
+}
+
 .masg span{
   display: block;
-  
+  font-size: 15px;
+
 }
