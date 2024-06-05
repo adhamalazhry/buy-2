@@ -4,145 +4,66 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
-    <title>     الاأدهم للتعليم عبر الإنترنت</title>
+    <title>الأدهم للتعليم عبر الإنترنت</title>
+    <style>
+        body {
+            font-family: 'Cairo', sans-serif;
+            background-color: #87CEEB; /* اللون السماوي */
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .paypal-container {
+            background-color: #ffffff;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            max-width: 600px; /* زيادة العرض لاستيعاب المحتوى */
+            width: 100%;
+        }
+        .paypal-container h2, .paypal-container h4 {
+            color: #333;
+            margin-bottom: 15px;
+            font-size: 24px;
+        }
+        .paypal-container p, .paypal-container h5 {
+            color: #555;
+            margin-bottom: 20px;
+            font-size: 16px;
+        }
+        .paypal-container input {
+            padding: 10px;
+            width: calc(100% - 22px); /* العرض بالكامل مع مراعاة الحواف */
+            margin-top: 10px;
+            margin-bottom: 20px;
+        }
+        .paypal-container label {
+            font-size: 18px;
+            margin-bottom: 10px;
+            display: block;
+        }
+        .paypal-container .error {
+            color: red;
+        }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="smart-button-container">
-        <h4 class="title" style="text-align: center ;">دفع رسوم الاشتراك الشهري بأكاديمية  الأدهم</h4>
-          <div class="note">
-            <p>       إرشادات قبل الدفع </p>
-            <h5>   نكتب قيمة الاشتراك بالدولار  
-              <span>( يعني لو المبلغ المراد دفعه 100 ريال هشوف  الـ 100 ريال تساوي كم دولار + 2 دولار رسوم تحويل)      </span>
-                ولايشترط وجود دولارات في البطاقة  </h5>
-          </div>
-        <div  style="text-align: center;margin-top: 0%;">
-          <label  for="description">اسم الطالب أو الطلاب </label>
-          <br/>
-          <input class="input1" type="text" name="descriptionInput" id="description" maxlength="127" value="">
-        </div>
-         <p class="error" id="descriptionError" style="display: none; color:red; text-align: center;">من فضلك اكتب اسم الطلاب</p>
-       
-           
-        <div style="text-align: center"><label for="amount"> اكتب المبلغ المراد دفعه + 2 دولار رسوم تحويل</label><br/>
-          <input name="amountInput" type="number" id="amount" value="" placeholder="أدخل القيمة بالدولار $ " ><span> USD</span></div>
-          <p id="priceLabelError" style="display: none; color:red; text-align: center;"> من فضلك أدخل المبلغ المراد ! </p>
-          
-         
-        <div id="invoiceidDiv" style="text-align: center; display: none;"><label for="invoiceid"> </label><input name="invoiceid" maxlength="127" type="text" id="invoiceid" value="" ></div>
-          <p class="error" id="invoiceidError" style=" display: none; color:red; text-align: center;">Please enter an Invoice ID</p>
-          <h5 style="text-align: center">    للدفع بالبطاقة نضغط على Debit or creatit card</h5>
-          
-        <div class="masg" style="text-align: center; margin-top: 0.625rem;" id="paypal-button-container"></div>
-      </div>
-      <script src="https://www.paypal.com/sdk/js?client-id=Ae0Pl6X_H-9pfOqgWtxX-4pDggxGOmZVs1TvXCY4Qi1u4Z4uvBJ2w7p09IKWMywXIGxj8T2Z5w8reshg&enable-funding=venmo&currency=USD" data-sdk-integration-source="button-factory"></script>
-      <script>
-      function initPayPalButton() {
-        var description = document.querySelector('#smart-button-container #description');
-        var amount = document.querySelector('#smart-button-container #amount');
-        var descriptionError = document.querySelector('#smart-button-container #descriptionError');
-        var priceError = document.querySelector('#smart-button-container #priceLabelError');
-        var invoiceid = document.querySelector('#smart-button-container #invoiceid');
-        var invoiceidError = document.querySelector('#smart-button-container #invoiceidError');
-        var invoiceidDiv = document.querySelector('#smart-button-container #invoiceidDiv');
-    
-        var elArr = [description, amount];
-    
-        if (invoiceidDiv.firstChild.innerHTML.length > 1) {
-          invoiceidDiv.style.display = "block";
-        }
-    
-        var purchase_units = [];
-        purchase_units[0] = {};
-        purchase_units[0].amount = {};
-    
-        function validate(event) {
-          return event.value.length > 0;
-        }
-    
-        paypal.Buttons({
-          style: {
-            color: 'gold',
-            shape: 'pill',
-            label: 'paypal',
-            layout: 'vertical',
-            
-          },
-    
-          onInit: function (data, actions) {
-            actions.disable();
-    
-            if(invoiceidDiv.style.display === "block") {
-              elArr.push(invoiceid);
-            }
-    
-            elArr.forEach(function (item) {
-              item.addEventListener('keyup', function (event) {
-                var result = elArr.every(validate);
-                if (result) {
-                  actions.enable();
-                } else {
-                  actions.disable();
-                }
-              });
-            });
-          },
-    
-          onClick: function () {
-            if (description.value.length < 1) {
-              descriptionError.style.display = "block";
-            } else {
-              descriptionError.style.display = "none";
-            }
-    
-            if (amount.value.length < 1) {
-              priceError.style.display = "block";
-            } else {
-              priceError.style.display = "none";
-            }
-    
-            if (invoiceid.value.length < 1 && invoiceidDiv.style.display === "block") {
-              invoiceidError.style.display = "block";
-            } else {
-              invoiceidError.style.display = "none";
-            }
-    
-            purchase_units[0].description = description.value;
-            purchase_units[0].amount.value = amount.value;
-    
-            if(invoiceid.value !== '') {
-              purchase_units[0].invoice_id = invoiceid.value;
-            }
-          },
-    
-          createOrder: function (data, actions) {
-            return actions.order.create({
-              purchase_units: purchase_units,
-            });
-          },
-    
-          onApprove: function (data, actions) {
-            return actions.order.capture().then(function (orderData) {
-    
-              // Full available details
-              console.log('Capture result', orderData, JSON.stringify(orderData, null, 2));
-    
-              // Show a success message within this page, e.g.
-              const element = document.getElementById('paypal-button-container');
-             
-              element.innerHTML = `<h2 >     تم دفع ( ${amount.value} $ ) بنجاح  <span>  شكرًا لكم🌹</span>   </h2>`;
-    
-              // Or go to another URL:  actions.redirect('thank_you.html');
-              
-            });
-          },
-    
-          onError: function (err) {
-            console.log(err);
-          }
-        }).render('#paypal-button-container');
-      }
-      initPayPalButton();
-      </script>
+    <div class="paypal-container">
+        <h2>دعمنا عبر PayPal</h2>
+        <p>نقدر دعمك لنا في تطوير مشاريعنا التعليمية.</p>
+        <div id="paypal-container-5BK92AJX9XEZU"></div>
+    </div>
+
+    <script src="https://www.paypal.com/sdk/js?client-id=BAAmGzrsTwC-YT6U3RmwYauzG1uMYLROGSw7xAyKOc0lcoLOyutP7IE636suSVtcXXbOjc36AzLmP3Uli0&components=hosted-buttons&disable-funding=venmo&currency=EUR"></script>
+    <script>
+        paypal.HostedButtons({
+            hostedButtonId: "5BK92AJX9XEZU",
+        }).render("#paypal-container-5BK92AJX9XEZU");
+    </script>
 </body>
 </html>
