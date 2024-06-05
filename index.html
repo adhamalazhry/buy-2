@@ -49,14 +49,27 @@
         .paypal-container .error {
             color: red;
         }
+        .logo-container {
+            display: flex;
+            align-items: center;
+            justify-content: center; /* لتوسيط العناصر أفقياً */
+            margin-bottom: 20px; /* لإضافة مساحة أسفل الحاوية */
+        }
+        .logo {
+            margin-right: 10px;
+            width: 50px;
+            height: auto;
+        }
     </style>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="paypal-container">
-        <h5>  PayPal دعمنا عبر   </h5>
-        <h3> الأدهم للتعليم عبر الإنترنت</h3>
-        
+        <div class="logo-container">
+            <img src="/logo.png" alt="لوجو الأكاديمية" class="logo">
+            <h5>PayPal دعمنا عبر</h5>
+        </div>
+        <h3>الأدهم للتعليم عبر الإنترنت</h3>
         <div id="paypal-container-5BK92AJX9XEZU"></div>
     </div>
 
